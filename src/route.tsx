@@ -1,18 +1,19 @@
-import {root} from "@lynx-js/react"
-import { MemoryRouter, Routes, Route } from 'react-router'
+import { root } from '@lynx-js/react';
+import { MemoryRouter, Routes, Route } from 'react-router';
 
-import { App } from "./App.js";
-import { Home } from "./screens/home/index.js";
+import { App } from './App.js';
+import { Home } from './screens/home/index.js';
 
-root.render(
+export function AppRouter() {
+  return (
     <MemoryRouter>
-        <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/home" element={<Home />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </MemoryRouter>
-)
+  );
+}
 
-if (import.meta.webpackHot){
-    import.meta.webpackHot.accept();
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept();
 }
