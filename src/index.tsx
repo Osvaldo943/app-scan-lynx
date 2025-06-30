@@ -1,9 +1,15 @@
-import { root } from '@lynx-js/react'
+import { root } from '@lynx-js/react';
 
-import { AppRouter } from './route.js'
+import { AppRouter } from './route.js';
+import { Header } from './components/header.js';
 
-root.render(<AppRouter />)
+root.render(
+  <view>
+    <Header />
+    <AppRouter />
+  </view>,
+);
 
 if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
+  import.meta.webpackHot.accept();
 }

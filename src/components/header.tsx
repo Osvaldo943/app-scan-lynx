@@ -1,5 +1,7 @@
 export function Header(){
     return (
-        <text>Cabeçalho</text>
+        <view>
+            <text>Cabeçalho</text>
+        </view>
     )
 } 
