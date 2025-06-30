@@ -1,7 +1,6 @@
 import { root } from '@lynx-js/react';
 import { MemoryRouter, Routes, Route } from 'react-router';
 
-import { App } from './App.js';
 import { Home } from './screens/home/index.js';
 
 export function AppRouter() {
