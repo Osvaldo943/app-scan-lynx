@@ -4,6 +4,6 @@ export function Home(){
     const nav = useNavigate()
 
     return(
-        <text bindtap={()=>nav("")}>Ir para detalhes do produto</text>
+        <text bindtap={()=>nav("/productDetail")}>Ir para detalhes do produto</text>
     )
 }
