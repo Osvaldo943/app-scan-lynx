@@ -6,7 +6,6 @@ export function Home() {
 
   return (
     <view>
-      <Header />
       <text bindtap={() => nav('/productDetail')}>
         Ir para detalhes do produto
       </text>
