@@ -1,0 +1,8 @@
+.header-container {
+    width: 100%;
+    background-color: #6366F1;
+    padding: 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

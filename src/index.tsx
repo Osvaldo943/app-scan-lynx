@@ -1,7 +1,7 @@
 import { root } from '@lynx-js/react';
 
 import { AppRouter } from './route.js';
-import { Header } from './components/header.js';
+import { Header } from './components/header/index.js';
 
 root.render(
   <view>

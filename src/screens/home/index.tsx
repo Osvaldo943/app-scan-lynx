@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import { Header } from '../../components/header.js';
+import { Header } from '../../components/header/index.js';
 
 export function Home() {
   const nav = useNavigate();
