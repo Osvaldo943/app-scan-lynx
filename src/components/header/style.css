@@ -8,3 +8,15 @@
     align-items: center;
     padding: 4px;
 }
+
+.btn-scan {
+    background-color: #fff;
+    padding: 4px;
+    border-radius: 4;
+}
+
+.header-container .scan-text {
+    font-size: 16px;
+    color: #6366F1;
+    font-weight: bold;
+}
