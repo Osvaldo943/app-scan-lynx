@@ -11,8 +11,9 @@ export function AppRouter() {
     <MemoryRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/productDetail' element={<ProductDetail/>} />
         <Route path='/scan' element={<Scan/>} />
+        <Route path='/productDetail' element={<ProductDetail/>} />
+        <Route path='/productComparison' element={<></>} />
       </Routes>
     </MemoryRouter>
   );
