@@ -1,3 +1,4 @@
+import "./globalStyle.css"
 import { root } from '@lynx-js/react';
 
 import { AppRouter } from './route.js';

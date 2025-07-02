@@ -3,15 +3,13 @@ import './style.css';
 export function Header() {
   return (
     <view className="header-container">
-      <view>
         <image
           src="./assets/logo.png"
           style={{ width: '100px', height: '60px' }}
-          tint-color='white'
+          tint-color='#ffffff'
         />
-      </view>
 
-      <text>Scan</text>
+      <text className='text'>Scan</text>
     </view>
   );
 }
