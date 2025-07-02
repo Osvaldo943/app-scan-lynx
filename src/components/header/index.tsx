@@ -6,7 +6,8 @@ export function Header() {
       <view>
         <image
           src="./assets/logo.png"
-          style={{ width: '150px', height: '100px' }}
+          style={{ width: '100px', height: '60px' }}
+          tint-color='white'
         />
       </view>
 
