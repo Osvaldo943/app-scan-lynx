@@ -1,12 +1,10 @@
+import './style.css'
+import reactLynxLogo from '../../assets/logo.png'
+
 export function Logo() {
   return (
-    <image
-      src="./assets/logo.png"
-      style={{
-        width: '100px',
-        height: '60px',
-        filter: 'brightness(0) invert(1)',
-      }}
-    />
+    <view>
+      <image src={reactLynxLogo} className='logo' tint-color='#fff' />
+    </view>
   );
 }

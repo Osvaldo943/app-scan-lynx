@@ -1,3 +1,3 @@
 export function Scan() {
-  return <text>Scan</text>
+  return <text>Camera</text>
 }

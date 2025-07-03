@@ -5,8 +5,9 @@ export function Header() {
   return (
     <view className="header-container">
       <Logo />
+      
       <view className="btn-scan">
-        <text className="text">Scan</text>
+        <text className="scan-text">Scan</text>
       </view>
     </view>
   );
