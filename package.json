@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@lynx-js/react": "^0.110.0",
+    "quagga": "^0.12.1",
+    "react-barcode-scanner": "^4.0.0",
     "react-router": "^6.30.1"
   },
   "devDependencies": {

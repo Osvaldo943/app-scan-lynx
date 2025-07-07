@@ -1,10 +1,12 @@
 import "./style.css"
 import type { IProduct } from "./type.js"
 import product1 from '../../assets/product-4.png'
+import {useNavigate} from 'react-router';
 
 export function Product({ title, description, code, price, shop, image = "" }: IProduct) {
+    const nav = useNavigate();
     return (
-        <view className="product-container">
+        <view bindtap={() => nav("/productComparison")} className="product-container">
             <view className="product-item">
                 <text className="text product-shop">{shop}</text>
                 <view className="product-image-container">

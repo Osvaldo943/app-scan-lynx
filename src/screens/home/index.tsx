@@ -7,6 +7,8 @@ export function Home() {
   const nav = useNavigate();
 
   return (
+    <>
+    <Header />
     <view className="screen">
       <text bindtap={() => nav('/productDetail')}>
         <text className='text'>Produtos</text>
@@ -19,5 +21,6 @@ export function Home() {
           <Product title='Arroz Alimo' code='980002' shop='Arreiou' image='assets/logo.png' description='' price={5000} />
         </view>
     </view>
+    </>
   );
 }

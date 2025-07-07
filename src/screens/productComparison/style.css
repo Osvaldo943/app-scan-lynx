@@ -1,0 +1,52 @@
+.comparison {
+    padding: 0px;
+}
+
+.comparison .product-container {
+    background-color: transparent;
+}
+
+.comparison .product-image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.589);
+    margin: 0px auto 10px;
+}
+
+.comparison .product-info {
+    background-color: white;
+    padding: 16px;
+    border-radius: 32px 32px 0px 0px;
+}
+
+.comparison .product-info .product-code {
+    margin-bottom: 0px;
+}
+
+.comparison .product-info .product-description {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #47474793;
+    border-top: 1px solid #4e4e4e2c;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.comparison .comparison-container {
+    margin: 16px 0px;
+}
+
+.comparison-container .comparison-by-shop {
+    margin-top: 8px;
+}
+
+.comparison .comparison-by-shop view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: white;
+    margin-bottom: 4px;
+}

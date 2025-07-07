@@ -6,7 +6,6 @@ import { Header } from './components/header/index.js';
 
 root.render(
   <>
-    <Header />
     <AppRouter />
   </>,
 );
