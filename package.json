@@ -11,8 +11,11 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@ericblade/quagga2": "^1.8.4",
     "@lynx-js/react": "^0.110.0",
-    "quagga": "^0.12.1",
+    "html5-qrcode": "^2.3.8",
+    "lynx": "^0.2.0",
+    "quagga": "^0.6.16",
     "react-barcode-scanner": "^4.0.0",
     "react-router": "^6.30.1"
   },

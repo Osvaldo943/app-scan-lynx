@@ -19,6 +19,8 @@ export function Home() {
           <Product title='Massa Alimo' code='020000' shop='Candando' image='assets/logo.png' description='' price={2000} />
           <Product title='Óleo arroz' code='405200' shop='Fortaleza' image='assets/logo.png' description='' price={6000} />
           <Product title='Arroz Alimo' code='980002' shop='Arreiou' image='assets/logo.png' description='' price={5000} />
+          <Product title='Arroz Alimo' code='980002' shop='Arreiou' image='assets/logo.png' description='' price={5000} />
+          <Product title='Arroz Alimo' code='980002' shop='Arreiou' image='assets/logo.png' description='' price={5000} />
         </view>
     </view>
     </>

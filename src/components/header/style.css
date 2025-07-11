@@ -15,9 +15,8 @@
     border: 1px solid #6366F1
 }
 
-.btn-scan:hover{
-    background-color: #6366F1;
-    color: #fff;
+.btn-scan:active{
+    background-color: #c5c5c5;
 }
 
 .header-container .scan-text {

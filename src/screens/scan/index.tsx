@@ -1,48 +1,45 @@
-declare global {
-  interface Window {
-    nativeBridge?: {
-      call: (
-        moduleName: string,
-        methodName: string,
-        params: Record<string, any>,
-        callback: (res: any) => void
-      ) => void;
-    };
-  }
-}
+import { useEffect, useState } from "react";
+import { Header } from "../../components/header/index.js"
+import product1 from '../../assets/product-4.png'
+import "./style.css"
+import { BarcodeScanner } from "../../components/scan/index.js";
 
 export function Scan() {
-  const startScan = () => {
-    try {
-      if (
-        typeof window !== 'undefined' &&
-        typeof window.nativeBridge?.call === 'function'
-      ) {
-        window.nativeBridge.call(
-          'BarcodeScannerModule',
-          'startScan',
-          {},
-          (result: any) => {
-            if (result?.code) {
-              alert(`Código escaneado: ${result.code}`);
-            } else {
-              alert('Nenhum código detectado.');
-            }
-          }
-        );
-      } else {
-        console.warn('window.nativeBridge.call não disponível.');
-        alert('Este ambiente não suporta scanner nativo.');
-      }
-    } catch (e) {
-      console.error('Erro ao chamar scanner nativo:', e);
-      alert('Erro ao iniciar scanner.');
-    }
-  };
+  const [userName, setUserName] = useState('');
 
+  const handleNameChange = (e: any) => {
+    setUserName(e); 
+  };
   return (
-    <view style={{ padding: 20 }}>
-      <text bindtap={startScan}>Iniciar Scanner</text>
-    </view>
+    <>
+      <Header />
+      <BarcodeScanner />
+      <view className="screen scan">
+        <view className="product-image-container">
+          <image src={product1} className="product-image" />
+        </view>
+        <text>{userName} </text>
+        <view className="form">
+          <view className="input-container">
+            <text className="label">Código</text>
+            <input className="input-text" style={{color: '#000'}} placeholder="Código" />
+          </view>
+          <view className="input-container">
+            <text className="label">Nome</text>
+            <input className="input-text" style={{color: '#000'}} placeholder="Nome" />
+          </view>
+          <view className="input-container">
+            <text className="label">Preço</text>
+            <input className="input-text" style={{color: '#000'}} placeholder="Preço" />
+          </view>
+          <view className="input-container">
+            <text className="label">Descrição</text>
+            <input className="input-text" style={{color: '#000'}} placeholder="Descrição" />
+          </view> 
+
+          <text className="btn-add-product">Adicionar produto</text>
+        </view>
+      </view>
+    </>
   );
 }
