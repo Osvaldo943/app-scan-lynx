@@ -1,40 +1,19 @@
-import { useEffect, useRef } from 'react';
-import { Html5Qrcode } from 'html5-qrcode';
+import { useEffect } from "@lynx-js/react";
 
-export function BarcodeScanner() {
-  const scannerRef = useRef<any>(null); // referência ao DOM
-
-  useEffect(() => {
-    if (!scannerRef.current) return; // ⚠️ garante que o DOM existe
-
-    const html5QrCode = new Html5Qrcode(scannerRef.current.id);
-
-    html5QrCode.start(
-      { facingMode: 'environment' },
-      {
-        fps: 10,
-        qrbox: { width: 250, height: 250 },
-      },
-      (decodedText) => {
-        console.log("Código lido:", decodedText);
-        html5QrCode.stop(); // para após ler
-      },
-      (error) => {
-        // erro comum de leitura, pode ignorar
-      }
-    );
-
-    return () => {
-      html5QrCode.stop().catch(() => {});
-    };
-  }, []);
+export function App() {
+  const handleScan = () => {
+    NativeModules.BarcodeScannerModule.startScan();
+  };
 
   return (
-    <view
-      id="scanner"
-      ref={scannerRef}
-      style={{ width: '100%', height: '300px', background: '#000' }}
-    ></view>
+    <view style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <view style={{
+        padding: "12px",
+        backgroundColor: "#2196F3",
+        borderRadius: "6px"
+      }} bindtap={handleScan}>
+        <text style={{ color: "#fff", fontSize: "18px" }}>Escanear Código</text>
+      </view>
+    </view>
   );
 }
-
