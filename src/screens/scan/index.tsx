@@ -14,10 +14,10 @@ export function Scan() {
 
   if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
     return(
-      <>
+      <view className="camera-container-not-supported">
         <Header />
-        <text>Câmera não suportada</text>
-      </>
+        <text >Câmera não suportada</text>
+      </view>
     )
   }
   
