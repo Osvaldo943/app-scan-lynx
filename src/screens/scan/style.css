@@ -56,9 +56,7 @@
     background-color: #4547a5;
 }
 
-.camera-container-not-supported {
-    margin: 8px;
-}
 .camera-container-not-supported text {
+    margin: 16px;
     color: #3a3a3a;
 }
