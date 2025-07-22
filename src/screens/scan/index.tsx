@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Header } from "../../components/header/index.js"
 import product1 from '../../assets/product-4.png'
-import "./style.css"
 import  BarcodeScanner  from "../../components/scan/index.js";
+import "./style.css"
 
 export function Scan() {
   const [userName, setUserName] = useState('');
