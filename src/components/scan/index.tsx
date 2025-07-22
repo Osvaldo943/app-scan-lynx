@@ -1,19 +1,45 @@
-import { useEffect } from "@lynx-js/react";
+// src/components/BarcodeScanner.tsx
+import React, { useEffect, useRef } from 'react';
+import { BrowserMultiFormatReader } from '@zxing/browser';
+import { Result } from '@zxing/library';
 
-export function App() {
-  const handleScan = () => {
-    NativeModules.BarcodeScannerModule.startScan();
-  };
+interface BarcodeScannerProps {
+  onResult: (text: string) => void;
+}
+
+const BarcodeScanner: React.FC<BarcodeScannerProps> = ({ onResult }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const codeReaderRef = useRef<BrowserMultiFormatReader>();
+
+  useEffect(() => {
+    const codeReader: any = new BrowserMultiFormatReader();
+    codeReaderRef.current = codeReader;
+
+    codeReader
+      .decodeFromVideoDevice(
+        undefined,
+        videoRef.current!,
+        (result: Result | undefined, error: any) => {
+          if (result) {
+            onResult(result.getText());
+          }
+        }
+      )
+      .catch((err: any) => console.error('Erro ao iniciar leitura:', err));
+
+    return () => {
+      codeReader?.stopContinuousDecode();
+    };
+  }, [onResult]);
 
   return (
-    <view style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <view style={{
-        padding: "12px",
-        backgroundColor: "#2196F3",
-        borderRadius: "6px"
-      }} bindtap={handleScan}>
-        <text style={{ color: "#fff", fontSize: "18px" }}>Escanear Código</text>
-      </view>
+    <view>
+      <video
+        ref={videoRef}
+        style={{ width: '100%', maxHeight: '400px', borderRadius: '12px' }}
+      />
     </view>
   );
-}
+};
+
+export default BarcodeScanner;

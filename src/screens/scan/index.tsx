@@ -1,47 +1,32 @@
-import { useEffect } from "@lynx-js/react";
-
-export function Scan() {
-  const handleScan = () => {
-    NativeModules.BarcodeScannerModule.startScan();
-  };
-
-  const buttonStyle = {
-    padding: "12px",
-    backgroundColor: "#2196F3",
-    borderRadius: "6px",
-    textAlign: "center",
-  };
-
-  const textStyle = {
-    color: "#fff",
-    fontSize: "18px",
-  };
-
-  return (
-    <view style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <view bindtap={handleScan}>
-        <text style={textStyle}>Escanear Código de Barras</text>
-      </view>
-    </view>
-  );
-}
-
-/*import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Header } from "../../components/header/index.js"
 import product1 from '../../assets/product-4.png'
 import "./style.css"
-import { BarcodeScanner } from "../../components/scan/index.js";
+import  BarcodeScanner  from "../../components/scan/index.js";
 
 export function Scan() {
   const [userName, setUserName] = useState('');
+  const [code, setCode] = useState<string | null> (null)
 
   const handleNameChange = (e: any) => {
     setUserName(e); 
   };
+
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    return(
+      <>
+        <Header />
+        <text>Câmera não suportada</text>
+      </>
+    )
+  }
+  
   return (
     <>
       <Header />
-      <BarcodeScanner />
+      <text>Leitor de Códigos (ZXing)</text>
+      {code && <text>Resultado:{code} </text>}
+      <BarcodeScanner onResult={setCode} />
       <view className="screen scan">
         <view className="product-image-container">
           <image src={product1} className="product-image" />
@@ -71,4 +56,31 @@ export function Scan() {
     </>
   );
 }
+
+/*
+import React, { useState, useEffect } from 'react';
+
+export const Scan = () => {
+  const [greeting, setGreeting] = useState('');
+
+  useEffect(() => {
+    const fetchGreeting = async () => {
+      try {
+        const result = await NativeModules.BarcodeScannerModule.sayHello('Desenvolvedor');
+        setGreeting(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchGreeting();
+  }, []);
+
+  return (
+    <view>
+      <text>{greeting}</text>
+    </view>
+  );
+};
+
 */

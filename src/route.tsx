@@ -18,7 +18,7 @@ export function AppRouter() {
         <Route path='/productComparison' element={<ProductComparison/>}/>
       </Routes>
     </MemoryRouter>
-  );
+  )
 }
 
 if (import.meta.webpackHot) {

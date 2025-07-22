@@ -7,7 +7,7 @@ import { Header } from './components/header/index.js';
 root.render(
   <>
     <AppRouter />
-  </>,
+  </>
 );
 
 if (import.meta.webpackHot) {
