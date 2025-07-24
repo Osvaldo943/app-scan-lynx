@@ -19,7 +19,7 @@ export function Scan() {
       </view>
     )
   }
-  
+
   return (
     <>
       <Header />
@@ -55,31 +55,3 @@ export function Scan() {
     </>
   );
 }
-
-/*
-import React, { useState, useEffect } from 'react';
-
-export const Scan = () => {
-  const [greeting, setGreeting] = useState('');
-
-  useEffect(() => {
-    const fetchGreeting = async () => {
-      try {
-        const result = await NativeModules.BarcodeScannerModule.sayHello('Desenvolvedor');
-        setGreeting(result);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchGreeting();
-  }, []);
-
-  return (
-    <view>
-      <text>{greeting}</text>
-    </view>
-  );
-};
-
-*/

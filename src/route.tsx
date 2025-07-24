@@ -7,12 +7,13 @@ import {ProductDetail} from './screens/productDetail/index.js';
 import { Scan } from './screens/scan/index.js';
 import { Header } from './components/header/index.js';
 import { ProductComparison } from './screens/productComparison/index.js';
+import { Camera } from './screens/camera/index.js';
 
 export function AppRouter() {
   return (
     <MemoryRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Camera />} />
         <Route path='/scan' element={<Scan/>} />
         <Route path='/productDetail' element={<ProductDetail/>} />
         <Route path='/productComparison' element={<ProductComparison/>}/>

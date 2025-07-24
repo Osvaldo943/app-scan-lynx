@@ -14,6 +14,7 @@
     "@ericblade/quagga2": "^1.8.4",
     "@lynx-js/react": "^0.110.0",
     "@zxing/browser": "^0.1.5",
+    "@zxing/library": "^0.21.3",
     "html5-qrcode": "^2.3.8",
     "lynx": "^0.2.0",
     "quagga": "^0.6.16",

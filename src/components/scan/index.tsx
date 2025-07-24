@@ -1,4 +1,3 @@
-// src/components/BarcodeScanner.tsx
 import React, { useEffect, useRef } from 'react';
 import { BrowserMultiFormatReader } from '@zxing/browser';
 import { Result } from '@zxing/library';
